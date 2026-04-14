@@ -1,0 +1,19 @@
+image:
+  repository: fastapi-app
+  tag: "local"
+  pullPolicy: Never        # use local image, don't pull from internet
+
+replicaCount: 2
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+resources:
+  limits:
+    memory: "128Mi"
+    cpu: "250m"
+  requests:
+    memory: "64Mi"
+    cpu: "100m"
